@@ -1,8 +1,39 @@
-🎵 Music Library AnalyzerA lightweight, high-performance Python application that scans your music folders, extracts metadata from your MP3 files, and generates a structured, easy-to-read CSV spreadsheet for your library.✨ FeaturesTargeted Scanning: Recursively scans your music directories for .mp3 files.Deep Metadata Extraction: Automatically pulls Title, Artist, Album, and Release Year.Playlist Awareness: Identifies the parent folder of every song, labeling it as a "Playlist" in your final report.Clean Output: Filters out non-music files (like game assets or system sounds) to ensure your spreadsheet contains only your actual music library.Modern GUI: Clean, intuitive interface built with Tkinter.🚀 Installation & UsageFor Windows & Linux UsersDownload the latest executable from the Releases page.Launch the application.Click "Select Folder" and choose your main music directory.The application will automatically generate a Music_Library_By_Playlist.csv in your folder.From SourceIf you prefer to run the script yourself:Clone the repository:Bashgit clone https://github.com/your-username/music-analyzer.git
-cd music-analyzer
-Setup Virtual Environment (Recommended):Bashpython3 -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
-Install dependencies:Bashpip install tinytag
-Run:Bashpython music_analyzer.py
-📊 Output StructureThe generated CSV file is fully compatible with Microsoft Excel, LibreOffice Calc, and Google Sheets. It includes the following columns:ColumnDescriptionTitleThe track name extracted from ID3 tags.ArtistThe performer or band name.AlbumThe album from which the track originates.YearThe release year.PlaylistThe name of the sub-directory containing the file.PathThe full file location on your machine.🛠 Building Your Own ExecutableIf you have modified the code and want to create your own standalone binary:Ensure your virtual environment is active.Install PyInstaller: pip install pyinstallerBuild the app:Bashpyinstaller --onefile --windowed music_analyzer.py
-Your executable will be located in the /dist folder.💡 TroubleshootingMissing Data: If a column appears empty, the ID3 tags for that file may be missing or corrupted. We recommend using MusicBrainz Picard to batch-tag your files.File Permissions: Ensure you have read access to the folders you are selecting.Build Issues: Always ensure you are building the executable on the platform (Windows or Linux) where you intend to run it, as these binaries are not cross-compatible.
+# 🎵 Music Library Analyzer
+
+A high-performance Python application designed to scan your music directories, extract metadata from MP3 files, and generate a clean, structured spreadsheet of your library.
+
+## ✨ Features
+
+* **Targeted Scanning:** Recursively scans your folders specifically for `.mp3` files.
+* **Smart Metadata Extraction:** Automatically pulls Title, Artist, Album, and Release Year.
+* **Playlist Awareness:** Automatically identifies the parent folder of every song and labels it as a "Playlist" in your report.
+* **Intelligent Filtering:** Automatically ignores non-music files (like game assets or system sounds) by verifying ID3 metadata.
+* **Modern GUI:** Built with Tkinter for a simple, intuitive user experience.
+
+## 🚀 Getting Started
+
+### Prerequisites
+* Python 3.7+
+* `tinytag` library
+
+### Installation & Usage
+
+1. **Clone or Download the project:**
+   ```bash
+   git clone [your-repository-url]
+   cd Music-Analyzer
+2. **Setup Virtual Environment (Recommended):**
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate  # On Windows use: venv\Scripts\activate
+3. **Install Dependencies:**
+   ```bash
+   pip install tinytag
+4. **Launch the App:**
+   ```bash
+   python music_analyzer.py
+
+
+📊 **Output Structure**
+
+The application generates a Music_Library_By_Playlist.csv file, which is compatible with Microsoft Excel, LibreOffice Calc, and Google Sheets.
